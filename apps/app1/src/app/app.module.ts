@@ -12,8 +12,13 @@ import { EffectsModule } from '@ngrx/effects';
 import { NxModule } from '@nrwl/angular';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppService } from './services/app.service';
 
 const routes: Routes = [
+	{
+		path: 'common',
+		component: Lazy1Component
+	},
 	{
 		path: 'app1',
 		component: Lazy1Component
@@ -48,7 +53,7 @@ export class App1SharedModule {
 	static forRoot(): ModuleWithProviders {
 		return {
 			ngModule: AppModule,
-			providers: []
+			providers: [AppService]
 		}
 	}
 }

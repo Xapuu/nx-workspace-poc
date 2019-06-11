@@ -8,12 +8,16 @@ import { Lazy2Component } from './lazy2/lazy2.component';
 import { SharedUiModule } from '@multi-app/shared-ui'
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { AppService } from './services/app.service';
 
 const routes: Routes = [
 	{
+		path: 'common',
+		component: Lazy2Component
+	},
+	{
 		path: 'app2',
 		component: Lazy2Component
-
 	}
 ]
 
@@ -37,7 +41,7 @@ export class App2SharedModule {
 	static forRoot(): ModuleWithProviders {
 		return {
 			ngModule: AppModule,
-			providers: []
+			providers: [AppService]
 		}
 	}
 }

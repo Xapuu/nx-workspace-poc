@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import {
 	Counter1State,
@@ -7,6 +7,7 @@ import {
 } from '@multi-app/data-access';
 
 import { SubMan } from '@multi-app/utils'
+import { AppService } from '../../services/app.service';
 
 @Component({
 	selector: 'multi-app-lazy-child',
@@ -15,16 +16,6 @@ import { SubMan } from '@multi-app/utils'
 })
 export class LazyChildComponent implements OnDestroy {
 	subMan: SubMan = new SubMan()
-
-	constructor(public store: Store<Counter1State>) {
-		this.subMan.add(
-			this.store
-				.pipe(select(counter1Query.getCounter))
-				.subscribe(x => {
-					this.counterData.count = x.count
-				})
-		)
-	}
 
 	counterData = {
 		count: 10,
@@ -36,7 +27,15 @@ export class LazyChildComponent implements OnDestroy {
 		decrement: () => this.store.dispatch(new fromCounter1Actions.DecrementCounter1()),
 		clear: () => this.store.dispatch(new fromCounter1Actions.ClearCounter1())
 	}
-
+	constructor(public store: Store<Counter1State>, private appService: AppService) {
+		this.subMan.add(
+			this.store
+				.pipe(select(counter1Query.getCounter))
+				.subscribe(x => {
+					this.counterData.count = x.count
+				})
+		)
+	}
 
 	counterAction(action: string) {
 		this.dispatcher[action]()

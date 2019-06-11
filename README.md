@@ -1,41 +1,21 @@
-# MultiApp
+# POC for migrating to monorepo 
 
-This project was generated using [Nx](https://nx.dev).
+# I Loading apps trough host app
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+start: `npm run host`
 
-🔎 **Nx is a set of Angular CLI power-ups for modern development.**
+By starting the app you will get served a wrapper app, of `app1` and `app2` both apps support lazy loading router, without a problem.
 
-## Quick Start & Documentation
+Key moments:
+ * Both apps must be provided in the host app by using `ModuleWithProviders` in order to avoid in order for the host to be able to load them
+ * The apps can share state trough data-access libs (as seen in the counter field)
+ * Both apps initialize own injection scope, so that services with same tokens don't override themselves but exist together, look at `initialize at` field
+ * When there are matching paths in both application, the one loaded first will be displayed (try switching the lines of `App1SharedModule.forRoot()` and `App2SharedModule.forRoot()`)
 
-[30-minute video showing all Nx features](https://nx.dev/getting-started/what-is-nx)
+# II Loading the apps separately
 
-[Interactive tutorial](https://nx.dev/tutorial/01-create-application)
+start: `npm run {{your project}}`
 
-## Generate your first application
-
-Run `ng g app myapp` to generate an application. When using Nx, you can create multiple applications and libraries in the same CLI workspace.
-
-## Development server
-
-Run `ng serve myapp` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name --project=myapp` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build myapp` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Jest](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Cypress](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Key moments:
+ * All apps have their own build process
+ * After transferring the apps-specific and apps-common modules and services load them from one new host application 

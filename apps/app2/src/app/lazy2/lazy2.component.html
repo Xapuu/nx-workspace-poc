@@ -1,11 +1,15 @@
 <div>
-		<p>
-			Eagerly loaded child with shared counter component, inside of app2
-		</p>
-	
-		<multi-app-counter (counterAction)="counterAction($event)"
-						   [counterData]='counterData'></multi-app-counter>
-	
-	</div>
-	
-<img src="assets/cat_painter.jpg" alt="cat">
+	<p>
+		Eagerly loaded child with shared counter component, inside of app2
+	</p>
+	<p>
+		With app service initialized at {{this.appService.createdStamp}}
+	</p>
+
+	<multi-app-counter (counterAction)="counterAction($event)"
+					   [counterData]='counterData'></multi-app-counter>
+
+</div>
+
+<img src="assets/cat_painter.jpg"
+	 alt="cat">

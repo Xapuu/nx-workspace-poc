@@ -2,6 +2,9 @@
 	<p>
 		Lazily loaded child with shared counter component, inside of app1
 	</p>
+	<p>
+		With app service initialized at {{this.appService.createdStamp}}
+	</p>
 
 	<multi-app-counter (counterAction)="counterAction($event)"
 					   [counterData]='counterData'></multi-app-counter>
