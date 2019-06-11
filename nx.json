@@ -15,13 +15,15 @@
       "tags": []
     },
     "app1": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["host"]
     },
     "app1-e2e": {
       "tags": []
     },
     "app2": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["host"]
     },
     "app2-e2e": {
       "tags": []
@@ -33,6 +35,9 @@
       "tags": []
     },
     "data-access": {
+      "tags": []
+    },
+    "utils": {
       "tags": []
     }
   }

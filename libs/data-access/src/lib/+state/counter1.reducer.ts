@@ -1,5 +1,5 @@
-import { Counter1Action, Counter1ActionTypes } from './counter1.actions';
-import { createReducer } from '@ngrx/store';
+import { Counter1Action, Counter1ActionTypes, fromCounter1Actions } from './counter1.actions';
+import { createReducer, on, State, createAction } from '@ngrx/store';
 
 export const COUNTER1_FEATURE_KEY = 'counter1';
 
@@ -26,9 +26,6 @@ export const initialState: Counter1State = {
 	count: 0
 };
 
-// Try with createReducerFunction
-// export const counterReducer = createReducer()
-
 export function counter1Reducer(
 	state: Counter1State = initialState,
 	action: Counter1Action
@@ -37,24 +34,17 @@ export function counter1Reducer(
 
 		case Counter1ActionTypes.ClearCounter1: {
 			state = { ...state, count: 0 }
-			console.log('clear')
-		
 			break;
 		}
 
 
 		case Counter1ActionTypes.IncrementCounter1: {
 			state = { ...state, count: state.count + 1 }
-			
-		console.log('++')
-			
 			break;
 		}
 
 		case Counter1ActionTypes.DecrementCounter1: {
 			state = { ...state, count: state.count - 1 }
-		console.log('--')
-			
 			break
 		}
 	}

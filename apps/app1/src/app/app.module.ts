@@ -9,7 +9,7 @@ import { DataAccessModule } from '@multi-app/data-access';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { NxModule, DataPersistence } from '@nrwl/angular';
+import { NxModule } from '@nrwl/angular';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
