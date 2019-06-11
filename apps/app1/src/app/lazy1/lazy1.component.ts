@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'multi-app-lazy1',
-  templateUrl: './lazy1.component.html',
-  styleUrls: ['./lazy1.component.scss']
+	selector: 'multi-app-lazy1',
+	templateUrl: './lazy1.component.html',
+	styleUrls: ['./lazy1.component.scss']
 })
-export class Lazy1Component implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class Lazy1Component { }

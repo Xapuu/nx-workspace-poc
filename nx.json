@@ -25,6 +25,15 @@
     },
     "app2-e2e": {
       "tags": []
+    },
+    "shared-ui": {
+      "tags": []
+    },
+    "models": {
+      "tags": []
+    },
+    "data-access": {
+      "tags": []
     }
   }
 }

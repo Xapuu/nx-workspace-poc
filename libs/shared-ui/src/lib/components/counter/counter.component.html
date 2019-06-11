@@ -1,0 +1,12 @@
+<div [ngStyle]="{'background': color, opacity: 0.8}">
+	<div>
+		{{counterData?.name}}
+	</div>
+	<div>
+		{{counterData?.count}}
+	</div>
+</div>
+
+<button (click)="doAction('increment')">Increment</button>
+<button (click)="doAction('decrement')">Decrement</button>
+<button (click)="doAction('clear')">Clear</button>

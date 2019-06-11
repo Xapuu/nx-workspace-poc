@@ -5,19 +5,37 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { Lazy1Component } from './lazy1/lazy1.component';
+import { DataAccessModule } from '@multi-app/data-access';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { NxModule, DataPersistence } from '@nrwl/angular';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 const routes: Routes = [
 	{
 		path: 'app1',
 		component: Lazy1Component
-
+	},
+	{
+		path: 'lazier',
+		loadChildren: () => import('./submodules/submodules.module').then(m => m.SubmodulesModule)
 	}
 ]
 
 @NgModule({
-	declarations: [AppComponent, Lazy1Component],
+	declarations: [
+		AppComponent,
+		Lazy1Component,
+	],
 	imports: [
+		NxModule.forRoot(),
+		StoreModule.forRoot({}),
+		EffectsModule.forRoot([]),
+		StoreDevtoolsModule.instrument({ maxAge: 50 }),
 		BrowserModule,
+		DataAccessModule,
 		RouterModule.forRoot(routes)
 	],
 	providers: [],

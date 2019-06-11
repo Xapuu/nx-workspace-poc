@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { Lazy2Component } from './lazy2/lazy2.component';
+import { SharedUiModule } from '@multi-app/shared-ui'
+
 
 const routes: Routes = [
 	{
@@ -16,6 +18,7 @@ const routes: Routes = [
 @NgModule({
 	declarations: [AppComponent, Lazy2Component],
 	imports: [
+		SharedUiModule,
 		BrowserModule,
 		RouterModule.forRoot(routes)
 	],
