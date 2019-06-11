@@ -7,5 +7,50 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "host": {
+      "tags": []
+    },
+    "host-e2e": {
+      "tags": []
+    },
+    "app1": {
+      "tags": [],
+      "implicitDependencies": ["host"]
+    },
+    "app1-e2e": {
+      "tags": []
+    },
+    "app2": {
+      "tags": [],
+      "implicitDependencies": ["host"]
+    },
+    "app2-e2e": {
+      "tags": []
+    },
+    "shared-ui": {
+      "tags": []
+    },
+    "models": {
+      "tags": []
+    },
+    "data-access": {
+      "tags": []
+    },
+    "utils": {
+      "tags": []
+    },
+    "feautres-app1-spec": {
+      "tags": ["app1"]
+    },
+    "ui-app1-ui": {
+      "tags": []
+    },
+    "ui-app2-ui": {
+      "tags": []
+    },
+    "features-app2-spec": {
+      "tags": []
+    }
+  }
 }
