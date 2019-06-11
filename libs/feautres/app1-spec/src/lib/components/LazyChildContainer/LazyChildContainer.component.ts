@@ -1,5 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import {
+	Component, OnDestroy
+} from '@angular/core';
+import {
+	Store,
+	select
+} from '@ngrx/store';
 import {
 	Counter1State,
 	counter1Query,
@@ -8,13 +13,13 @@ import {
 
 import { SubMan } from '@multi-app/utils'
 import { AppService } from '../../services/app.service';
-
 @Component({
-	selector: 'multi-app-lazy-child',
-	templateUrl: './lazy-child.component.html',
-	styleUrls: ['./lazy-child.component.scss']
+	selector: 'multi-app-LazyChildContainer',
+	templateUrl: './LazyChildContainer.component.html',
+	styleUrls: ['./LazyChildContainer.component.scss']
 })
-export class LazyChildComponent implements OnDestroy {
+export class LazyChildContainerComponent implements OnDestroy {
+
 	subMan: SubMan = new SubMan()
 
 	counterData = {
@@ -27,7 +32,7 @@ export class LazyChildComponent implements OnDestroy {
 		decrement: () => this.store.dispatch(new fromCounter1Actions.DecrementCounter1()),
 		clear: () => this.store.dispatch(new fromCounter1Actions.ClearCounter1())
 	}
-	constructor(public store: Store<Counter1State>, private appService: AppService) {
+	constructor(public store: Store<Counter1State>, public appService: AppService) {
 		this.subMan.add(
 			this.store
 				.pipe(select(counter1Query.getCounter))
@@ -44,5 +49,4 @@ export class LazyChildComponent implements OnDestroy {
 	ngOnDestroy(): void {
 		this.subMan.clear()
 	}
-
 }

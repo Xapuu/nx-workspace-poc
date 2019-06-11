@@ -18,7 +18,11 @@
       "@multi-app/shared-ui": ["libs/shared-ui/src/index.ts"],
       "@multi-app/models": ["libs/models/src/index.ts"],
       "@multi-app/data-access": ["libs/data-access/src/index.ts"],
-      "@multi-app/utils": ["libs/utils/src/index.ts"]
+      "@multi-app/utils": ["libs/utils/src/index.ts"],
+      "@multi-app/feautres/app1-spec": ["libs/feautres/app1-spec/src/index.ts"],
+      "@multi-app/ui/app1-ui": ["libs/ui/app1-ui/src/index.ts"],
+      "@multi-app/ui/app2-ui": ["libs/ui/app2-ui/src/index.ts"],
+      "@multi-app/features/app2-spec": ["libs/features/app2-spec/src/index.ts"]
     },
     "rootDir": "."
   },

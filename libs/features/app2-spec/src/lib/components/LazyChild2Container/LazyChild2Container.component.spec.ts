@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { Lazy1Component } from './lazy1.component';
+import { LazyChild2ContainerComponent } from './LazyChild2Container.component';
 
-describe('Lazy1Component', () => {
-  let component: Lazy1Component;
-  let fixture: ComponentFixture<Lazy1Component>;
+describe('LazyChild2ContainerComponent', () => {
+  let component: LazyChild2ContainerComponent;
+  let fixture: ComponentFixture<LazyChild2ContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Lazy1Component ]
+      declarations: [ LazyChild2ContainerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Lazy1Component);
+    fixture = TestBed.createComponent(LazyChild2ContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

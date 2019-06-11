@@ -39,6 +39,18 @@
     },
     "utils": {
       "tags": []
+    },
+    "feautres-app1-spec": {
+      "tags": ["app1"]
+    },
+    "ui-app1-ui": {
+      "tags": []
+    },
+    "ui-app2-ui": {
+      "tags": []
+    },
+    "features-app2-spec": {
+      "tags": []
     }
   }
 }

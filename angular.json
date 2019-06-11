@@ -478,6 +478,130 @@
           "styleext": "scss"
         }
       }
+    },
+    "feautres-app1-spec": {
+      "projectType": "library",
+      "root": "libs/feautres/app1-spec",
+      "sourceRoot": "libs/feautres/app1-spec/src",
+      "prefix": "multi-app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/feautres/app1-spec/tsconfig.lib.json",
+              "libs/feautres/app1-spec/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/feautres/app1-spec/src/test.ts",
+            "tsConfig": "libs/feautres/app1-spec/tsconfig.spec.json",
+            "karmaConfig": "libs/feautres/app1-spec/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-app1-ui": {
+      "projectType": "library",
+      "root": "libs/ui/app1-ui",
+      "sourceRoot": "libs/ui/app1-ui/src",
+      "prefix": "multi-app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/app1-ui/tsconfig.lib.json",
+              "libs/ui/app1-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ui/app1-ui/src/test.ts",
+            "tsConfig": "libs/ui/app1-ui/tsconfig.spec.json",
+            "karmaConfig": "libs/ui/app1-ui/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ui-app2-ui": {
+      "projectType": "library",
+      "root": "libs/ui/app2-ui",
+      "sourceRoot": "libs/ui/app2-ui/src",
+      "prefix": "multi-app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/app2-ui/tsconfig.lib.json",
+              "libs/ui/app2-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/ui/app2-ui/src/test.ts",
+            "tsConfig": "libs/ui/app2-ui/tsconfig.spec.json",
+            "karmaConfig": "libs/ui/app2-ui/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "features-app2-spec": {
+      "projectType": "library",
+      "root": "libs/features/app2-spec",
+      "sourceRoot": "libs/features/app2-spec/src",
+      "prefix": "multi-app",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/features/app2-spec/tsconfig.lib.json",
+              "libs/features/app2-spec/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/features/app2-spec/src/test.ts",
+            "tsConfig": "libs/features/app2-spec/tsconfig.spec.json",
+            "karmaConfig": "libs/features/app2-spec/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
